@@ -1,5 +1,7 @@
-# BathroomClimateController: _IOT sensor tracking humidity and temperature of your bathroom to avoid mold
-_
+# BathroomClimateController #
+
+## Cheap sensor tracking humidity and temperature of your bathroom to avoid mold ##
+
 ![alt text](https://github.com/oliolioli/BathroomClimateController/blob/main/titleImage.png)
 
 _Basic Idea_: As it was advised last winter to reduce heating if possible, mold become a problem. Thus the idea of this project is to sensor:
