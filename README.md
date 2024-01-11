@@ -1,6 +1,6 @@
-# BathroomClimateController #
+# BathroomClimateController 🛁 #
 
-## 🛁 Cheap sensor tracking humidity and temperature of your bathroom to avoid mold 🛁 ##
+## >> Sensor tracking humidity and temperature of your bathroom to avoid mold and save energy ##
 
 ![alt text](https://github.com/oliolioli/BathroomClimateController/blob/main/titleImage.png)
 
