@@ -1,4 +1,4 @@
-# BathroomClimateController #
+# BathroomClimateController 🛁 #
 
 ## Cheap sensor tracking humidity and temperature of your bathroom to avoid mold ##
 
