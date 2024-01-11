@@ -11,7 +11,7 @@ The M5 ATOM lite with an ENV III unit is used for this project, a comprehensive 
 key elements in assessing mold risk. The fundamental concept behind our mold detection system lies in the calculation of the dew point. To calculate it, we adopted the Magnus-Tetens formula, an approximation technique
 that incorporates both temperature and relative humidity. This formula can be represented as:
 
-$ T_dp = $
+$$ T_dp = $$
 
 ## How to set everything up ##
 
