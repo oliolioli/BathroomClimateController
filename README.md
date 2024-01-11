@@ -13,6 +13,9 @@ that incorporates both temperature and relative humidity. This formula can be re
 
 $$ T_{dp} = T - \frac{100 - RH}{5} $$
 
+where Tdp is the dew point, T is the temperature, and RH is the relative humidity. A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.
+Our approach consisted of four phases.
+
 ## How to set everything up ##
 
 1. Set 
