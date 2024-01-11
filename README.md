@@ -77,14 +77,26 @@ the size of the array is reached:
 currentIndex = ( currentIndex + 1) % dataSize ;
 ```
 
+This data structure therefore allows us to store values over a certain time and with continuous renewal despite limited memory.
+
 ### Traversals ###
 We iterate through these arrays with **currentIndex** - set back to zero after reaching the tail (by modulo). By this the data is refreshed automatically and doesn't need to be popped or pushed, as it is a queue. The size limit cannot be removed because we're working with the maximum of available space.
 
 
-## Testing ##
+## Access point and webserver ##
+It can at times be difficult to make an accessible user-interface on a microcontroller. However the versatility of the Arduino M5 Stack allows to efficiently address the issue. He is indeed capable of hosting a WiFi access point and also a webserver. In other terms, it means that the M5 Stack can answer to requests, in this case HTTP GET requests, sent on the local area network. Not only does it result in not needing to have an external webserver, it also makes it easier and more secure for the user to access the interface as they only have to load the web page after connecting to the WiFi. When starting the device, a new WiFi network called BathroomClimateController will appear. This network can be momentarily joined with password: ”123456789”. Upon connected to the WiFi network, the webpage findable at 192.168.4.1 will display all the relevant information. The device’s LED will automatically turn red if the environment conditions are prone to mold and green otherwise.
+
+
+## Generating HTML and Plotting ##
+JavaScript libraries nowadays eases plotting. But due to their complexity and interconnectedness it is utterly impossible to use them on an offline IOT sensor. Hence we plotted temperature, humidity and corresponding dew point on a grid with HTML Canvas. Humidity and temperature needed two different y-axes and appropriate scaling. As sensor data is saved every minute we could average seven days back in time and could use JavaScript date functions of the local client to print a meaningful timeline on to the x-axis without need of any internal clock on the M5 ATOM. The plotting itself is done by iterating through the preprocessed data, drawing the plot pixel per pixel with the Canvas functions moveTo(), lineTo() and finally stroke().
+
+
+## Testing and Mocking ##
 As there is only one sensor available, we can **mock sensor data** with random temperature and humidity. With this data filled in our storage arrays, we can calculate and send (mocked) data to the webserver and display it.
 
 ### Mocking sensor data ###
+
+To ensure that our program works, we have included three different tests. As a basic test we created a Makefile to check the correct compilation of the .cpp files. For example, spelling errors, missing brackets or wrong assignments can be detected directly. Furthermore, pipelines are comprised of jobs, which define what will be done, such as compiling or testing code, as well as stages that spell out when to run the jobs. An example would be running tests after stages that compile the code. Additionally, we used mocking data to simulate the functioning of the entire program. For that purpose we generated randomised temperature and humidity values and filled the whole data structure. Thereby we could test that the data structure runs as designed and improve the graphical representation. The actual sensor data furthermore continuously overwrites the mocked data structure and thus generates real data without need to switch between mocking and real data.
 
 ```
 // Generates and prints 'count' random numbers in range [lower, upper].
@@ -127,43 +139,7 @@ sed -e 's/$/");/' index-escaped-prefix.html > index-escaped-prefix-postfix.html
 ```
 
 
-##### Display / plot data #####
-The nearby solution to plot data in a small webserver is Javascript. Unfortunately every Javascript library supporting plotting uses 1) a lot of space and 2) even if downloaded and included locally in webserver of M5 there are still some further links to further libraries as the Javascript universe is huge.
-
-Therefore BathroomClimateAssistant uses HTML Canvas to display simple graphs to plot temperature and humidity, see https://www.w3schools.com/graphics/canvas_drawing.asp.
-
-
-### Automated Build Pipeline ### 
-In GitLab you can find your pipelines on the left side in menu point "CI/CD" - "Pipelines"
-
-- https://medium.com/swlh/how-to-create-an-automated-build-pipeline-for-your-arduino-project-1df9826f2a5e
-
-- https://medium.com/swlh/how-to-create-an-automated-build-pipeline-for-your-arduino-project-1df9826f2a5e
-
-- https://arduino.stackexchange.com/questions/74781/can-i-integrate-arduino-in-a-ci-cd-setup
-
-
-#### Setup arduino-cli ####
-
-Install arduino-cli, then follow these instructions:
-https://arduino.github.io/arduino-cli/0.21/getting-started/
-
-Problems with USB ports (under Linux):
-https://github.com/arduino/arduino-cli/issues/1543
-
-
-### HOWTOs / Learning material ###
-- Nice playlist "How to Get Started Learning Embedded Systems": https://www.youtube.com/watch?v=aC37UE7edP0&list=PL9IEJIKnBJjEcPAz6fss-Hx0TLytCOMVC
-
-- Allocating memory with malloc, calloc, realloc, and free: https://www.youtube.com/watch?v=P6oqhAxV0dA&pp=ygUTamFjb2Igc29yYmVyIG1hbGxvYw%3D%3D
-
-- Learn GIT: https://learngitbranching.js.org
-
-- Instructions on the installation: https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/
-
-- https://www.eeweb.com/a-temperature-sensor-with-m5stack/
 
 
 **Technical Problems**
 - https://support.arduino.cc/hc/en-us/articles/360016495679-Fix-port-access-on-Linux
-- 
