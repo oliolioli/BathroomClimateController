@@ -4,18 +4,14 @@
 
 ![alt text](https://github.com/oliolioli/BathroomClimateController/blob/main/titleImage.png)
 
-_Basic Idea_: As it was advised last winter to reduce heating if possible, mold become a problem. Thus the idea of this project is to sensor:
+Mold growth in bathrooms is a pervasive problem that is not only unsightly but also poses significant health risks. As mold thrives in humid environments, bathrooms are particularly
+susceptible. To combat this issue, we initiated Project NOMA with the goal of creating a device capable of consistently monitoring conditions conducive to mold growth.
 
-**1) Humidity**
+The M5 ATOM lite with an ENV III unit is used for this project, a comprehensive environmental sensor possessing the ability to accurately measure both temperature and humidity - two
+key elements in assessing mold risk. The fundamental concept behind our mold detection system lies in the calculation of the dew point. To calculate it, we adopted the Magnus-Tetens formula, an approximation technique
+that incorporates both temperature and relative humidity. This formula can be represented as:
 
-**2) Temperature**
-
-These two values will be then set off against each other in some sort of simple physical model to know if the room (e.g. bathroom) is too humid or too cold and to take what measure (e.g. increase ventilation or heating).
-
-The mentioned values will be retrievable through a web server running on the sensor device itself, plotting the collected data.
-
-Ideally the bathroom climate control unit enables you to prevent mold but allows you at the same time to save energy as it balances these two goals.
-
+$ T_dp = $
 
 ## How to set everything up ##
 
