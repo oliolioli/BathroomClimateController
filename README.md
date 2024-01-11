@@ -5,7 +5,7 @@
 ![alt text](https://github.com/oliolioli/BathroomClimateController/blob/main/titleImage.png)
 
 Mold growth in bathrooms is a pervasive problem that is not only unsightly but also poses significant health risks. As mold thrives in humid environments, bathrooms are particularly
-susceptible. To combat this issue, we initiated Project NOMA with the goal of creating a device capable of consistently monitoring conditions conducive to mold growth.
+susceptible. BathroomClimateController is a small microprocessor capable of consistently monitoring conditions conducive to mold growth and plot all the data on to your smartphone.
 
 The M5 ATOM lite with an ENV III unit is used for this project, a comprehensive environmental sensor possessing the ability to accurately measure both temperature and humidity - two
 key elements in assessing mold risk. The fundamental concept behind our mold detection system lies in the calculation of the dew point. To calculate it, we adopted the Magnus-Tetens formula, an approximation technique
