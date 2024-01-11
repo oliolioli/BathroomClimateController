@@ -1,6 +1,8 @@
 # BathroomClimateController
 IOT sensor tracking humidity and temperature of your bathroom to avoid mold
 
+![alt text](https://github.com/oliolioli/BathroomClimateController/blob/main/titleImage.png)
+
 _Basic Idea_: As it was advised last winter to reduce heating if possible, mold become a problem. Thus the idea of this project is to sensor:
 
 **1) Humidity**
@@ -12,8 +14,6 @@ These two values will be then set off against each other in some sort of simple 
 The mentioned values will be retrievable through a web server running on the sensor device itself, plotting the collected data.
 
 Ideally the bathroom climate control unit enables you to prevent mold but allows you at the same time to save energy as it balances these two goals.
-
-![alt text](https://github.com/oliolioli/BathroomClimateController/blob/main/titleImage.png)
 
 
 ## How to set everything up ##
