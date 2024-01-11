@@ -14,6 +14,8 @@ The mentioned values will be retrievable through a web server running on the sen
 Ideally the bathroom climate control unit enables you to prevent mold but allows you at the same time to save energy as it balances these two goals.
 
 
+
+
 ## How to set everything up ##
 
 1. Set 
