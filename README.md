@@ -1,7 +1,6 @@
 # BathroomClimateController
 IOT sensor tracking humidity and temperature of your bathroom to avoid mold
 
-
 _Basic Idea_: As it was advised last winter to reduce heating if possible, mold become a problem. Thus the idea of this project is to sensor:
 
 **1) Humidity**
@@ -10,9 +9,10 @@ _Basic Idea_: As it was advised last winter to reduce heating if possible, mold 
 
 These two values will be then set off against each other in some sort of simple physical model to know if the room (e.g. bathroom) is too humid or too cold and to take what measure (e.g. increase ventilation or heating).
 
-The mentioned values will be retrievable by on a web API (implemented on the device or pushed to a remote web API).
+The mentioned values will be retrievable through a web server running on the sensor device itself, plotting the collected data.
 
 Ideally the bathroom climate control unit enables you to prevent mold but allows you at the same time to save energy as it balances these two goals.
+
 
 ## How to set everything up ##
 
@@ -31,7 +31,7 @@ In your Arduino **"File" → "Preferences" → "Additional Boards Manager URLs"*
 
 ## Sensors ##
 
-Sensor **ENV III** https://shop.m5stack.com/collections/m5-sensor/products/env-iii-unit-with-temperature-humidity-air-pressure-sensor-sht30-qmp6988 seems to fullfill our requirements and is quite cheap.
+Sensor **ENV III** https://shop.m5stack.com/collections/m5-sensor/products/env-iii-unit-with-temperature-humidity-air-pressure-sensor-sht30-qmp6988 fullfills the requirements and is quite cheap.
 
 
 ## Data handling and storage ##
@@ -55,6 +55,28 @@ Check: 2 Bytes * 18430 + 4 Bytes * 18430 = 110580 Bytes ✓
   temp = (float*) malloc(dataSize * sizeof(float));  // 4 Bytes
   hum = (unsigned short*) malloc(dataSize * sizeof(unsigned short));  // 2 Bytes
 ```
+
+## Data structure ## 
+
+In order to work with the sensor data, it must be stored in an accessible data structure. To analyze the available memory space to store the sensor data, we used the function malloc() and determined the available memory of 110’580 Bytes by means of trials. As data types we chose for the percentage value of the humidity unsigned short (2 bytes of memory needed per value) and for the temperature float (4 bytes of memory needed per value). Subsequently, using this information, we calculated that we can store 18’430 measuring points. The needed memory space for two separate arrays of this size is allocated during initialization using the malloc() function:
+
+```
+temp = ( float *) malloc ( dataSize * sizeof ( float ) ) ; // 4 Bytes
+hum = ( unsigned short *) malloc ( dataSize * sizeof ( unsigned short ) ) ;
+// 2 Bytes
+```
+
+In order to be able to work with the sensor data over a longer period of time, it is not sufficient
+to store data once in the data structure explained above. Based on the decision to store a value
+every second, the 18’000+ positions can hold about 12 days of data without renewal. To have
+current data beyond these 12 days we decided to overwrite the array from the beginning. To
+do this, in each loop in which data is stored, a variable currentindex is increased by one until
+the size of the array is reached:
+
+```
+currentIndex = ( currentIndex + 1) % dataSize ;
+```
+
 ### Traversals ###
 We iterate through these arrays with **currentIndex** - set back to zero after reaching the tail (by modulo). By this the data is refreshed automatically and doesn't need to be popped or pushed, as it is a queue. The size limit cannot be removed because we're working with the maximum of available space.
 
