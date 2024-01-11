@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head><style>.shade {border:5px solid #4db8ff; margin-left:10px; padding:5px; background-color: #eef;box-shadow: -6px -6px rgba(0,0,0,0.6);-moz-box-shadow: -6x -6x rgba(0,0,0,0.6);-webkit-box-shadow: -6px -6px rgba(0,0,0,0.6);-o-box-shadow: -6px -6px rgba(0,0,0,0.6);}
+h1 {text-align: margin-left:30px; left;padding: 10px;margin-top: -45px;font-family: Helvetica, sans-serif;font3-size: 50px;transform: skewY(-6deg);letter-spacing: 4px;word-spacing: -8px;color: #4db8ff;text-shadow: -1px -1px 0 firebrick,-2px -2px 0 firebrick,-3px -3px 0 #002080, -4px -4px 0 #002080, -5px -5px 0 #002080, -6px -6px 0 #002080, -7px -7px 0 #002080, -8px -8px 0 #002080, -30px 20px 40px dimgrey }
+h2 {font-family: Helvetica, sans-serif}</style></head>
+<body>
+
+
+<h1 style="margin-left:25px">BATHROOM<br>CLIMATE &#128704;<br>CONTROLLER</h1>
+</br>
+<div style="width:550px" class="shade">
+<h2>Temperature : 27.7°C</h2>
+<h2>Dew Point: 28.2°C</h2>
+<h2>Humidity: 29.8%</h2>
+</div>
+</br>
+
+<p id="demo"></p>
+
+<canvas id="myCanvas" width="550" height="450" class="shade">
+Your browser does not support the canvas element.
+</canvas>
+
+<script>
+function drawCanvas( tempGraph, dewPointGraph, humidityGraph){  
+    var canvas = document.getElementById( "myCanvas" );  
+    var context = canvas.getContext( "2d" );
+    var GRAPH_TOP = 25;  
+    var GRAPH_BOTTOM = 375;  
+    var GRAPH_LEFT = 35;  
+    var GRAPH_RIGHT = 480;    
+    var GRAPH_HEIGHT = 350;  
+    var GRAPH_WIDTH = 450;  
+
+    // get max temp to draw right y-axis (= temp and also dew point)
+    var largestTemp = 0;  
+    for( var i = 0; i < tempGraph.length; i++ ){  
+        if( tempGraph[ i ] > largestTemp ){  
+            largestTemp = tempGraph[ i ] + 5;  
+        }  
+    }
+    
+    // get max humidity to draw left y-axis (=humidity)
+    var largestHumidity = 0;  
+    for( var i = 0; i < humidityGraph.length; i++ ){  
+        if( humidityGraph[ i ] > largestHumidity ){  
+            largestHumidity = humidityGraph[ i ] + 5;  
+        }  
+    }
+    context.clearRect( 0, 0, 500, 400 );  
+    context.font = "12px Arial";  
+       
+    // draw X and right Y axis  
+    context.beginPath();  
+    context.moveTo( GRAPH_LEFT, GRAPH_BOTTOM );  
+    context.lineTo( GRAPH_RIGHT, GRAPH_BOTTOM );  
+    context.lineTo( GRAPH_RIGHT, GRAPH_TOP );  
+    context.stroke();
+    
+    // draw humidity axis (Y axis on the left)
+    context.beginPath();
+    context.moveTo( GRAPH_LEFT, GRAPH_BOTTOM );  
+    context.lineTo( GRAPH_LEFT, GRAPH_TOP );
+    context.stroke();
+
+    // draw reference values for humidity (left y-axis)
+    context.beginPath();
+    context.fillStyle = "#002080";  
+    context.fillText(Math.round(largestHumidity) + "%", GRAPH_LEFT - 30, GRAPH_TOP);
+    context.stroke();
+    context.fillText(Math.round(largestHumidity / 4) + "%", GRAPH_LEFT - 30, ( GRAPH_HEIGHT ) / 4 * 3 + GRAPH_TOP );
+    context.stroke();
+    context.fillText(Math.round(largestHumidity / 2) + "%", GRAPH_LEFT - 30, Math.round( GRAPH_HEIGHT ) / 2 + GRAPH_TOP );
+    context.stroke();
+    context.fillText(Math.round(largestHumidity / 4 * 3) + "%", GRAPH_LEFT - 30, ( GRAPH_HEIGHT ) / 4 + GRAPH_TOP );
+    context.stroke();
+    
+    // draw reference values for temp (right y-axis)
+    context.beginPath();
+    context.fillStyle = "black";  
+    context.strokeStyle = "#BBB";
+    context.fillText(Number((largestTemp).toFixed(1)) + " C\xB0", GRAPH_RIGHT + 15, GRAPH_TOP);
+    context.stroke();
+    
+    // draw temp reference line #2
+    context.beginPath();  
+    context.moveTo( GRAPH_LEFT, ( GRAPH_HEIGHT ) / 4 * 3 + GRAPH_TOP );  
+    context.lineTo( GRAPH_RIGHT, ( GRAPH_HEIGHT ) / 4 * 3 + GRAPH_TOP );
+    
+    // draw reference value for temp (right y-axis)
+    context.fillText( Number((largestTemp / 4).toFixed(1)) + " C\xB0", GRAPH_RIGHT + 15, ( GRAPH_HEIGHT ) / 4 * 3 + GRAPH_TOP);    
+    context.stroke();
+      
+    // draw temp reference line #3
+    context.beginPath();  
+    context.moveTo( GRAPH_LEFT, ( GRAPH_HEIGHT ) / 2 + GRAPH_TOP );
+    context.lineTo( GRAPH_RIGHT, ( GRAPH_HEIGHT ) / 2 + GRAPH_TOP );
+    
+    // draw reference value for temp (right y-axis)
+    context.fillText( Number((largestTemp / 2).toFixed(1)) + " C\xB0", GRAPH_RIGHT + 15, Math.round( GRAPH_HEIGHT ) / 2 + GRAPH_TOP);  
+    context.stroke();  
+    
+    // draw temp reference line #4
+    context.beginPath();
+    context.moveTo( GRAPH_LEFT, ( GRAPH_HEIGHT ) / 4 + GRAPH_TOP );
+    context.lineTo( GRAPH_RIGHT, ( GRAPH_HEIGHT ) / 4 + GRAPH_TOP );
+    
+    // draw reference value for temp (right y-axis)  
+    context.fillText( Number((largestTemp / 4 * 3).toFixed(1)) + " C\xB0", GRAPH_RIGHT + 15, ( GRAPH_HEIGHT ) / 4 + GRAPH_TOP);  
+    context.stroke();  
+    // draw titles  
+    context.fillText( "Date", GRAPH_RIGHT / 2, GRAPH_BOTTOM + 50);  
+
+    // ### 1. Drawing graph temperature ###
+    context.beginPath();  
+    context.lineJoin = "round";  
+    context.strokeStyle = "black";  
+    context.moveTo( GRAPH_LEFT, ( GRAPH_HEIGHT - tempGraph[ 0 ] / largestTemp * GRAPH_HEIGHT ) + GRAPH_TOP );  
+    // Get day and month for x-axis
+    var dateObj = new Date();
+    var newdate = dateObj.getUTCDate() + "." + (dateObj.getUTCMonth() + 1);
+    
+    // draw reference value for day of the week
+    for( var i = 1; i < tempGraph.length; i++ ){  
+        context.lineTo( GRAPH_RIGHT / tempGraph.length * i + GRAPH_LEFT, ( GRAPH_HEIGHT - tempGraph[ i ] / largestTemp * GRAPH_HEIGHT ) + GRAPH_TOP );
+
+    // draw reference value for day of the week  
+    context.fillText(newdate - i, GRAPH_RIGHT - (i * tempGraph.length * 10) , GRAPH_BOTTOM + 25);    
+    
+    }
+    context.stroke();  
+   
+    // ### 2. Drawing graph dew point ###
+    context.beginPath();  
+    context.lineJoin = "round";  
+    context.strokeStyle = "red";  
+    context.moveTo( GRAPH_LEFT, ( GRAPH_HEIGHT - dewPointGraph[ 0 ] / largestTemp * GRAPH_HEIGHT ) + GRAPH_TOP );  
+    
+    for( var i = 1; i < dewPointGraph.length; i++ ){  
+        context.lineTo( GRAPH_RIGHT / dewPointGraph.length * i + GRAPH_LEFT, ( GRAPH_HEIGHT - dewPointGraph[ i ] /  largestTemp * GRAPH_HEIGHT ) + GRAPH_TOP );
+    }
+    context.stroke();
+   
+    // ### 3. Drawing graph humidity ###
+    context.beginPath();
+    context.setLineDash([5, 3]);
+    context.lineJoin = "round";  
+    context.strokeStyle = "#002080";      
+    context.moveTo( GRAPH_LEFT, ( GRAPH_HEIGHT - humidityGraph[ 0 ] / largestHumidity * GRAPH_HEIGHT ) + GRAPH_TOP );  
+    
+    for( var i = 1; i < humidityGraph.length; i++ ){  
+        context.lineTo( GRAPH_RIGHT / humidityGraph.length * i + GRAPH_LEFT, ( GRAPH_HEIGHT - humidityGraph[ i ] /  largestHumidity * GRAPH_HEIGHT ) + GRAPH_TOP );
+    }
+    context.stroke();    
+
+    // Drawing graph temperature legend
+    context.font = "italic 12px Arial";  
+    context.fillStyle = "black";
+    context.fillText( "Temperature", GRAPH_RIGHT, (GRAPH_BOTTOM) + 40);
+    context.fillStyle = "red";  
+    context.fillText( "Dew point", GRAPH_RIGHT, (GRAPH_BOTTOM) + 60 );
+    context.fillStyle = "#002080";  
+    context.fillText( "Humidity", GRAPH_LEFT - 30, (GRAPH_BOTTOM) + 50 );
+}
+
+// Graphs
+var tempGraph = [27.9,32.4,30.8,26.5,25,26,26.3];
+var humidityGraph = [26.670834,22.369444,23.766666,28.355556,28,30,28.386806,];
+
+// calculate dewPoints (taking arrays tempGraph and humidityGraph)
+
+/*
+// fill this array with corresponding dewPoints
+for (var i=0; i < tempGraph.length; i++) {
+    dewPointGraph[i] = tempGraph[i] - ((100 - humidityGraph[i]) / 5);
+}
+*/
+
+var dewPointGraph = [ 16, 15, 19.4, 21.4, 28, 28.5, 13 ];
+
+// Draw the graphs! :)
+drawCanvas( tempGraph, dewPointGraph, humidityGraph);
+
+</script>
+
+</body>
+</html>
+
