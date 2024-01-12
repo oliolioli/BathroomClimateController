@@ -7,18 +7,13 @@
 Mold growth in bathrooms is a pervasive problem that is not only unsightly but also poses significant health risks. As mold thrives in humid environments, bathrooms are particularly
 susceptible. BathroomClimateController is a small microprocessor capable of consistently monitoring conditions conducive to mold growth and plot all the data on to your smartphone.
 
-The *M5 ATOM lite with an ENV III unit* is used for this project, a comprehensive environmental sensor possessing the ability to accurately measure both temperature and humidity - two
+The [**M5 ATOM lite with an ENV III unit**](https://shop.m5stack.com/collections/m5-sensor/products/env-iii-unit-with-temperature-humidity-air-pressure-sensor-sht30-qmp6988) is used for this project, a comprehensive environmental sensor possessing the ability to accurately measure both temperature and humidity - two
 key elements in assessing mold risk. The fundamental concept behind mold detection system lies in the calculation of the dew point. This can be done with the Magnus-Tetens formula, an approximation technique
 that incorporates both temperature and relative humidity:
 
 $$ T_{dewpoint} = T - \frac{100 - RH}{5} $$
 
-Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the *relative humidity*. *A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.*
-
-
-## Sensors ##
-
-Sensor **ENV III** https://shop.m5stack.com/collections/m5-sensor/products/env-iii-unit-with-temperature-humidity-air-pressure-sensor-sht30-qmp6988 fullfills the requirements and is quite cheap.
+Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the *relative humidity*. **A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.**
 
 
 ## How to set everything up ##
