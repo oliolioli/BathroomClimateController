@@ -40,8 +40,7 @@ Global variables use 44448 bytes (13%) of dynamic memory, leaving 283232 bytes f
 
 We can get exactly **110580 Bytes** on the whole M5 by malloc. Therefore these 110580 Bytes have to be split up into two arrays. As **size of float = 4 Bytes** and **size of unsigned short = 2 Bytes** one array to store data of 2 and the other to store data of 4 Bytes:
 
-> 110580 Bytes / 6 = 18430 Bytes. Thus array one (2B) gets 2 * 18430 and array two (4B) get 4 * 18430 Bytes. 
-
+> 110580 Bytes / 6 = 18430 Bytes. Thus array one (2B) gets 2 * 18430 and array two (4B) get 4 * 18430 Bytes.
 > Check: 2 Bytes * 18430 + 4 Bytes * 18430 = 110580 Bytes ✓
 
 ```
