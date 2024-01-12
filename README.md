@@ -88,7 +88,7 @@ This data structure therefore allows us to store values over a certain time and 
 ### Iteration through data structure ###
 We iterate through these arrays with **currentIndex** - set back to zero after reaching the tail (by modulo). By this the data is refreshed automatically and doesn't need to be popped or pushed, as it is a queue. The size limit cannot be removed because we're working with the maximum of available space.
 
-## Mocking sensor data ##
+### Mocking sensor data ###
 As there is only one sensor available, we can **mock sensor data** with random temperature and humidity. With this data filled in our storage arrays, we can calculate and send (mocked) data to the webserver and display it.
 
 For that purpose we generated randomised temperature and humidity values and filled the whole data structure. Thereby we could test that the data structure runs as designed and improve the graphical representation. **The actual sensor data furthermore continuously overwrites the mocked data structure and thus generates real data without need to switch between mocking and real data**.
