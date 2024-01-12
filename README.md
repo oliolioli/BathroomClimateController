@@ -26,7 +26,7 @@ Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the
 4. Arduino: Choose Board by "Tools" → "Board" → "M5Stack" → "M5Stack-ATOM"
 5. Arduino: Click CTRL+Shift+M to display the Serial Monitor. There you have to set *Bauds = 600* to see the output of the program.
 
-&rarr; If you get problems accessing your serial port under Linux maybe this can help: https://support.arduino.cc/hc/en-us/articles/360016495679-Fix-port-access-on-Linux
+💡 If you get problems accessing your serial port under Linux maybe this can help: https://support.arduino.cc/hc/en-us/articles/360016495679-Fix-port-access-on-Linux
 
 ## Access point and webserver ##
 It can at times be difficult to make an accessible user-interface on a microcontroller. However the versatility of the Arduino M5 Stack allows to efficiently address the issue. He is indeed capable of hosting a WiFi access point and also a webserver. With the includes: <WiFi.h>, <WiFiClient.h> and <WiFiAP.h> we let run a little webserver and an access point on the M5.
