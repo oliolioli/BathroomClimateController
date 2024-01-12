@@ -6,6 +6,12 @@ Mold growth in bathrooms is a pervasive problem that is not only unsightly but a
 susceptible. BathroomClimateController is a small microprocessor capable of consistently monitoring conditions conducive to mold growth and plot all the data on to your smartphone. 
 Also the device’s LED will automatically turn red if the environment conditions are prone to mold and green otherwise.
 
+
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](https://...Dark.png)  |  ![](https://...Ocean.png)
+
+
 1           | 2
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](https://...Dark.png)  |  ![](https://...Ocean.png)  | ![](https://...Ocean.png)  
