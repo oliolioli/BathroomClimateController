@@ -1,6 +1,6 @@
 ![BathroomClimateController Logo](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/logo.png)
 
-## Track humidity & temperature in your bathroom to avoid mold and save energy 🛁 ##
+# Track humidity & temperature in your bathroom to avoid mold and save energy 🛁 #
 
 Mold growth in bathrooms is a pervasive problem that is not only unsightly but also poses significant health risks. As mold thrives in humid environments, bathrooms are particularly
 susceptible. BathroomClimateController is a small microprocessor capable of consistently monitoring conditions conducive to mold growth and plot all the data on to your smartphone. 
@@ -18,7 +18,17 @@ Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the
 
 **A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.**
 
-## How to set everything up ##
+# Access point and webserver ##
+It can at times be difficult to make an accessible user-interface on a microcontroller. However the versatility of the Arduino M5 Stack allows to efficiently address the issue. He is indeed capable of hosting a WiFi access point and also a webserver (copied from https://github.com/m5stack/M5AtomU/blob/master/examples/Advanced/WIFI/WiFiSetting/WebServer.h), including <WiFi.h>, <WiFiClient.h> and <WiFiAP.h>.
+
+Thus the M5 Stack can answer HTTP GET requests, sent on the local area network. Not only does it result in not needing to have an external webserver, it also makes it easier and more secure for the user to access the interface as they only have to load the web page after connecting to the WiFi. When starting the device, a new **WiFi network called BathroomClimateController** will appear. This network can be momentarily joined with **password: ”123456789”**. Upon connected to the WiFi network, the webpage findable at **192.168.4.1** will display all the relevant information.
+
+## Generating HTML and Plotting ##
+JavaScript libraries nowadays eases plotting. But due to their complexity and interconnectedness it is utterly impossible to use them on an offline IOT sensor. Hence we plotted temperature, humidity and corresponding dew point on a grid with [HTML5 Canvas element](https://en.wikipedia.org/wiki/Canvas_element). Humidity and temperature needed two different y-axes and appropriate scaling. As sensor data is saved every minute we could average seven days back in time and could use JavaScript date functions of the local client to print a meaningful timeline on to the x-axis without need of any internal clock on the M5 ATOM. The plotting itself is done by iterating through the preprocessed data, drawing the plot pixel per pixel with the Canvas functions *moveTo()*, *lineTo()* and finally *stroke()*.
+
+
+
+# How to set everything up #
 
 1. Arduino: Set the following additional board manager _https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json_ under: **"File" → "Preferences" → "Additional Boards Manager URLs"** 
 2. Get all the files from this repo through git with _git pull_
@@ -28,16 +38,7 @@ Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the
 
 **💡** If you get problems accessing your serial port under Linux maybe this can help: https://support.arduino.cc/hc/en-us/articles/360016495679-Fix-port-access-on-Linux
 
-## Access point and webserver ##
-It can at times be difficult to make an accessible user-interface on a microcontroller. However the versatility of the Arduino M5 Stack allows to efficiently address the issue. He is indeed capable of hosting a WiFi access point and also a webserver (copied from https://github.com/m5stack/M5AtomU/blob/master/examples/Advanced/WIFI/WiFiSetting/WebServer.h), including <WiFi.h>, <WiFiClient.h> and <WiFiAP.h>.
-
-Thus the M5 Stack can answer HTTP GET requests, sent on the local area network. Not only does it result in not needing to have an external webserver, it also makes it easier and more secure for the user to access the interface as they only have to load the web page after connecting to the WiFi. When starting the device, a new **WiFi network called BathroomClimateController** will appear. This network can be momentarily joined with **password: ”123456789”**. Upon connected to the WiFi network, the webpage findable at **192.168.4.1** will display all the relevant information.
-
-
-## Generating HTML and Plotting ##
-JavaScript libraries nowadays eases plotting. But due to their complexity and interconnectedness it is utterly impossible to use them on an offline IOT sensor. Hence we plotted temperature, humidity and corresponding dew point on a grid with [HTML5 Canvas element](https://en.wikipedia.org/wiki/Canvas_element). Humidity and temperature needed two different y-axes and appropriate scaling. As sensor data is saved every minute we could average seven days back in time and could use JavaScript date functions of the local client to print a meaningful timeline on to the x-axis without need of any internal clock on the M5 ATOM. The plotting itself is done by iterating through the preprocessed data, drawing the plot pixel per pixel with the Canvas functions *moveTo()*, *lineTo()* and finally *stroke()*.
-
-### Generating HTML for embedded webserver ###
+## Generating HTML for embedded webserver ##
 The webserver serves a single, quite simple HTML page, which is generated by simple "println"-lines in file **webServer.cpp**. To convert valid HTML to this special version, you can use the following script to append a pre- and a postfix to every line (don't forget to escape the double quotes first: '"' has to become '\"').
 
 ```
@@ -91,7 +92,7 @@ This data structure therefore allows us to store values over a certain time and 
 ### Traversals ###
 We iterate through these arrays with **currentIndex** - set back to zero after reaching the tail (by modulo). By this the data is refreshed automatically and doesn't need to be popped or pushed, as it is a queue. The size limit cannot be removed because we're working with the maximum of available space.
 
-### Mocking sensor data ###
+## Mocking sensor data ##
 As there is only one sensor available, we can **mock sensor data** with random temperature and humidity. With this data filled in our storage arrays, we can calculate and send (mocked) data to the webserver and display it.
 
 For that purpose we generated randomised temperature and humidity values and filled the whole data structure. Thereby we could test that the data structure runs as designed and improve the graphical representation. **The actual sensor data furthermore continuously overwrites the mocked data structure and thus generates real data without need to switch between mocking and real data**.
