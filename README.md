@@ -12,9 +12,11 @@ Also the device’s LED will automatically turn red if the environment condition
 ![](https://...Dark.png)  |  ![](https://...Ocean.png) |  ![](https://...Ocean.png)|  ![](https://...Ocean.png)
 
 
-1           | 2
-:-------------------------:|:-------------------------:|:-------------------------:
-![](https://...Dark.png)  |  ![](https://...Ocean.png)  | ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/env3.png)
+              1                          |             2             |            3              |          4
+:-------------------------:|:-------------------------:|:-------------------------:|:------------------:
+![](https://...Dark.png)  |  ![](https://...Ocean.png) |  ![](https://...Ocean.png)|  ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/env3.png)
+
+
 
 
 :-----------:|:--------------:|:-------------------------:
