@@ -7,9 +7,11 @@ susceptible. BathroomClimateController is a small microprocessor capable of cons
 Also the device’s LED will automatically turn red if the environment conditions are prone to mold and green otherwise.
 
 
-              1            |             2             |           3
-:-------------------------:|:-------------------------:|:-------------------------:
-![](https://...Dark.png)  |  ![](https://...Ocean.png) |  ![](https://...Ocean.png) 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
 
 
               1                          |             2             |            3              |          4
