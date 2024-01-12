@@ -10,9 +10,9 @@ Also the device’s LED will automatically turn red if the environment condition
 :-------------------------:|:-------------------------:
  |  The [**M5 ATOM lite with an ENV III unit**](https://shop.m5stack.com/collections/m5-sensor/products/env-iii-unit-with-temperature-humidity-air-pressure-sensor-sht30-qmp6988) is used for this project, a comprehensive environmental sensor possessing the ability to accurately measure both temperature and humidity - two key elements in assessing mold risk. 
 
-Solarized dark             |  Solarized Ocean
+
 :-------------------------:|:-------------------------:
-![Atom lite](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/atomlite.png)  |  ![]([https://...Ocean.png](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/env3.png))
+![Atom lite](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/atomlite.png)  |  ![]([https://...Ocean.png](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/env3.png)
 
 
 
