@@ -2,8 +2,6 @@
 
 ## >> Sensor tracking humidity and temperature of your bathroom to avoid mold and save energy ##
 
-![alt text](https://github.com/oliolioli/BathroomClimateController/blob/main/titleImage.png)
-
 Mold growth in bathrooms is a pervasive problem that is not only unsightly but also poses significant health risks. As mold thrives in humid environments, bathrooms are particularly
 susceptible. BathroomClimateController is a small microprocessor capable of consistently monitoring conditions conducive to mold growth and plot all the data on to your smartphone.
 
@@ -91,6 +89,7 @@ sed -e 's/$/");/' index-escaped-prefix.html > index-escaped-prefix-postfix.html
 ## Generating HTML and Plotting ##
 JavaScript libraries nowadays eases plotting. But due to their complexity and interconnectedness it is utterly impossible to use them on an offline IOT sensor. Hence we plotted temperature, humidity and corresponding dew point on a grid with [HTML5 Canvas element](https://en.wikipedia.org/wiki/Canvas_element). Humidity and temperature needed two different y-axes and appropriate scaling. As sensor data is saved every minute we could average seven days back in time and could use JavaScript date functions of the local client to print a meaningful timeline on to the x-axis without need of any internal clock on the M5 ATOM. The plotting itself is done by iterating through the preprocessed data, drawing the plot pixel per pixel with the Canvas functions *moveTo()*, *lineTo()* and finally *stroke()*.
 
+![alt text](https://github.com/oliolioli/BathroomClimateController/blob/main/titleImage.png)
 
 ### Mocking sensor data ###
 As there is only one sensor available, we can **mock sensor data** with random temperature and humidity. With this data filled in our storage arrays, we can calculate and send (mocked) data to the webserver and display it.
