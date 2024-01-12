@@ -16,7 +16,7 @@ Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the
 
 ![Plotting temperature and humidity with HTML5 Canvas element](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/plot.png)
 
-**A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.**
+**ℹ️** **A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.**
 
 # Access point and webserver ##
 It can at times be difficult to make an accessible user-interface on a microcontroller. However the versatility of the Arduino M5 Stack allows to efficiently address the issue. He is indeed capable of hosting a WiFi access point and also a webserver (copied from https://github.com/m5stack/M5AtomU/blob/master/examples/Advanced/WIFI/WiFiSetting/WebServer.h), including <WiFi.h>, <WiFiClient.h> and <WiFiAP.h>.
