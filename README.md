@@ -11,9 +11,9 @@ The *M5 ATOM lite with an ENV III unit* is used for this project, a comprehensiv
 key elements in assessing mold risk. The fundamental concept behind mold detection system lies in the calculation of the dew point. This can be done with the Magnus-Tetens formula, an approximation technique
 that incorporates both temperature and relative humidity:
 
-$$ T_{dp} = T - \frac{100 - RH}{5} $$
+$$ T_{dewpoint} = T - \frac{100 - RH}{5} $$
 
-Where $$T_{dp}$$ is the dew point, *T* is the *temperature*, and *RH* is the *relative humidity*. A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.
+Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the *relative humidity*. A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.
 
 
 ## Sensors ##
