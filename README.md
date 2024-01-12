@@ -85,7 +85,7 @@ currentIndex = ( currentIndex + 1) % dataSize ;
 
 This data structure therefore allows us to store values over a certain time and with continuous renewal despite limited memory.
 
-### Traversals ###
+### Iteration through data structure ###
 We iterate through these arrays with **currentIndex** - set back to zero after reaching the tail (by modulo). By this the data is refreshed automatically and doesn't need to be popped or pushed, as it is a queue. The size limit cannot be removed because we're working with the maximum of available space.
 
 ## Mocking sensor data ##
