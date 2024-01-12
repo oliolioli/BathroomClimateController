@@ -84,7 +84,7 @@ JavaScript libraries nowadays eases plotting. But due to their complexity and in
 ### Mocking sensor data ###
 As there is only one sensor available, we can **mock sensor data** with random temperature and humidity. With this data filled in our storage arrays, we can calculate and send (mocked) data to the webserver and display it.
 
-For that purpose we generated randomised temperature and humidity values and filled the whole data structure. Thereby we could test that the data structure runs as designed and improve the graphical representation. The actual sensor data furthermore continuously overwrites the mocked data structure and thus generates real data without need to switch between mocking and real data.
+For that purpose we generated randomised temperature and humidity values and filled the whole data structure. Thereby we could test that the data structure runs as designed and improve the graphical representation. **The actual sensor data furthermore continuously overwrites the mocked data structure and thus generates real data without need to switch between mocking and real data**.
 
 ```
 // Generates and prints 'count' random numbers in range [lower, upper].
