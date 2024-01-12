@@ -50,7 +50,7 @@ We can get exactly **110580 Bytes** on the whole M5 by malloc. Therefore these 1
 
 ### Data structure ### 
 
-In order to work with the sensor data, it must be stored in an accessible data structure. To analyze the available memory space to store the sensor data, we used the function malloc() and determined the available memory of 110’580 Bytes by means of trials. As data types we chose for the percentage value of the humidity unsigned short (2 bytes of memory needed per value) and for the temperature float (4 bytes of memory needed per value). Subsequently, using this information, we calculated that we can store 18’430 measuring points. The needed memory space for two separate arrays of this size is allocated during initialization using the malloc() function:
+In order to work with the sensor data, it must be stored in an accessible data structure. To analyze the available memory space to store the sensor data, we used the function *malloc()* and determined the available memory of 110’580 Bytes by means of trials. As data types we chose for the percentage value of the humidity unsigned short (2 bytes of memory needed per value) and for the temperature float (4 bytes of memory needed per value). Subsequently, using this information, we calculated that we can store 18’430 measuring points. The needed memory space for two separate arrays of this size is allocated during initialization using the malloc() function:
 
 ```
 temp = ( float *) malloc ( dataSize * sizeof ( float ) ) ; // 4 Bytes
@@ -59,7 +59,7 @@ hum = ( unsigned short *) malloc ( dataSize * sizeof ( unsigned short ) ) ;
 ```
 
 In order to be able to work with the sensor data over a longer period of time, it is not sufficient to store data once in the data structure explained above. Based on the decision to store a value
-every second, the 18’000+ positions can hold about 12 days of data without renewal. To have current data beyond these 12 days we decided to overwrite the array from the beginning. To do this, in each loop in which data is stored, a variable currentindex is increased by one until
+every second, the **18’000+ positions can hold about 12 days of data without renewal**. To have current data beyond these 12 days we decided to overwrite the array from the beginning. To do this, in each loop in which data is stored, a variable currentindex is increased by one until
 the size of the array is reached:
 
 ```
