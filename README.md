@@ -14,6 +14,7 @@ $$ T_{dewpoint} = T - \frac{100 - RH}{5} $$
 
 Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the *relative humidity*.
 
+
 ➡ **A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.**
 
 # Access point and webserver ##
