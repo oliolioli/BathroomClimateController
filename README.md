@@ -24,7 +24,6 @@ Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the
 
 # Access point and webserver ##
 
-| | |
 | -- | -- |
 | | |
 
