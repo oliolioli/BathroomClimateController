@@ -2,7 +2,7 @@
 
 ## >> Sensor tracking humidity and temperature of your bathroom to avoid mold and save energy ##
 
-![BathroomClimateController Logo](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshot/logo.png)
+![BathroomClimateController Logo](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/logo.png)
 
 Mold growth in bathrooms is a pervasive problem that is not only unsightly but also poses significant health risks. As mold thrives in humid environments, bathrooms are particularly
 susceptible. BathroomClimateController is a small microprocessor capable of consistently monitoring conditions conducive to mold growth and plot all the data on to your smartphone.
