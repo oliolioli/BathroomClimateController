@@ -6,13 +6,6 @@ Mold growth in bathrooms is a pervasive problem that is not only unsightly but a
 
 The [**M5 ATOM lite with an ENV III unit**](https://shop.m5stack.com/collections/m5-sensor/products/env-iii-unit-with-temperature-humidity-air-pressure-sensor-sht30-qmp6988) is used for this project, a comprehensive environmental sensor possessing the ability to accurately measure both temperature and humidity - two key elements in assessing mold risk.
 
-
-| M5 ATOM lite (7.5$) | + ENV III unit (6$) | = total control of your bathroom |
-| ------------- | -------------- | -------------- |
-| ![Atom lite](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/atomlite.png) | ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/env3.png) | ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/titleImage.png) |
-
-
-## Temperature and relative humidity ##
 The fundamental concept behind mold detection system lies in the calculation of the dew point. This can be done with the Magnus-Tetens formula, an approximation technique
 that incorporates both temperature and relative humidity:
 
@@ -20,8 +13,13 @@ $$ T_{dewpoint} = T - \frac{100 - RH}{5} $$
 
 Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the *relative humidity*.
 
-
 ➡ **A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.**
+
+
+| M5 ATOM lite (7.5$) | + ENV III unit (6$) | = total control of your bathroom |
+| ------------- | -------------- | -------------- |
+| ![Atom lite](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/atomlite.png) | ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/env3.png) | ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/titleImage.png) |
+
 
 # Access point and webserver ##
 
