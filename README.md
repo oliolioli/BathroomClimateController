@@ -80,12 +80,11 @@ It can at times be difficult to make an accessible user-interface on a microcont
 JavaScript libraries nowadays eases plotting. But due to their complexity and interconnectedness it is utterly impossible to use them on an offline IOT sensor. Hence we plotted temperature, humidity and corresponding dew point on a grid with [HTML5 Canvas element](https://en.wikipedia.org/wiki/Canvas_element). Humidity and temperature needed two different y-axes and appropriate scaling. As sensor data is saved every minute we could average seven days back in time and could use JavaScript date functions of the local client to print a meaningful timeline on to the x-axis without need of any internal clock on the M5 ATOM. The plotting itself is done by iterating through the preprocessed data, drawing the plot pixel per pixel with the Canvas functions *moveTo()*, *lineTo()* and finally *stroke()*.
 
 
-## Testing and Mocking ##
-As there is only one sensor available, we can **mock sensor data** with random temperature and humidity. With this data filled in our storage arrays, we can calculate and send (mocked) data to the webserver and display it.
 
 ### Mocking sensor data ###
+As there is only one sensor available, we can **mock sensor data** with random temperature and humidity. With this data filled in our storage arrays, we can calculate and send (mocked) data to the webserver and display it.
 
-To ensure that our program works, we have included three different tests. As a basic test we created a Makefile to check the correct compilation of the .cpp files. For example, spelling errors, missing brackets or wrong assignments can be detected directly. Furthermore, pipelines are comprised of jobs, which define what will be done, such as compiling or testing code, as well as stages that spell out when to run the jobs. An example would be running tests after stages that compile the code. Additionally, we used mocking data to simulate the functioning of the entire program. For that purpose we generated randomised temperature and humidity values and filled the whole data structure. Thereby we could test that the data structure runs as designed and improve the graphical representation. The actual sensor data furthermore continuously overwrites the mocked data structure and thus generates real data without need to switch between mocking and real data.
+For that purpose we generated randomised temperature and humidity values and filled the whole data structure. Thereby we could test that the data structure runs as designed and improve the graphical representation. The actual sensor data furthermore continuously overwrites the mocked data structure and thus generates real data without need to switch between mocking and real data.
 
 ```
 // Generates and prints 'count' random numbers in range [lower, upper].
