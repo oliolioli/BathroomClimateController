@@ -6,7 +6,9 @@ Mold growth in bathrooms is a pervasive problem that is not only unsightly but a
 
 
 
-The [**M5 ATOM lite with an ENV III unit**](https://shop.m5stack.com/collections/m5-sensor/products/env-iii-unit-with-temperature-humidity-air-pressure-sensor-sht30-qmp6988) is used for this project, a comprehensive environmental sensor possessing the ability to accurately measure both temperature and humidity - two key elements in assessing mold risk. ![Atom lite](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/atomlite.png) test ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/env3.png)
+The [**M5 ATOM lite with an ENV III unit**](https://shop.m5stack.com/collections/m5-sensor/products/env-iii-unit-with-temperature-humidity-air-pressure-sensor-sht30-qmp6988) is used for this project, a comprehensive environmental sensor possessing the ability to accurately measure both temperature and humidity - two key elements in assessing mold risk. 
+
+![Atom lite](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/atomlite.png) test ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/env3.png)
 
 
 The fundamental concept behind mold detection system lies in the calculation of the dew point. This can be done with the Magnus-Tetens formula, an approximation technique
