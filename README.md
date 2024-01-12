@@ -10,13 +10,9 @@ The [**M5 ATOM lite with an ENV III unit**](https://shop.m5stack.com/collections
 key elements in assessing mold risk. The fundamental concept behind mold detection system lies in the calculation of the dew point. This can be done with the Magnus-Tetens formula, an approximation technique
 that incorporates both temperature and relative humidity:
 
-$$ T_{dewpoint} = T - \frac{100 - RH}{5} $$
-
-Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the *relative humidity*.
-
 Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
-![Plotting temperature and humidity with HTML5 Canvas element](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/plot.png)  |  ![](https://...Ocean.png)
+$$ T_{dewpoint} = T - \frac{100 - RH}{5} $$  |  Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the *relative humidity*.
 
 
 
@@ -30,7 +26,7 @@ Thus the M5 Stack can answer HTTP GET requests, sent on the local area network. 
 ## Generating HTML and Plotting ##
 JavaScript libraries nowadays eases plotting. But due to their complexity and interconnectedness it is utterly impossible to use them on an offline IOT sensor. Hence we plotted temperature, humidity and corresponding dew point on a grid with [HTML5 Canvas element](https://en.wikipedia.org/wiki/Canvas_element). Humidity and temperature needed two different y-axes and appropriate scaling. As sensor data is saved every minute we could average seven days back in time and could use JavaScript date functions of the local client to print a meaningful timeline on to the x-axis without need of any internal clock on the M5 ATOM. The plotting itself is done by iterating through the preprocessed data, drawing the plot pixel per pixel with the Canvas functions *moveTo()*, *lineTo()* and finally *stroke()*.
 
-
+![Plotting temperature and humidity with HTML5 Canvas element](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/plot.png)
 
 # How to set everything up #
 
