@@ -15,6 +15,7 @@ $$ T_{dewpoint} = T - \frac{100 - RH}{5} $$
 
 Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the *relative humidity*. **A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.**
 
+The device’s LED will automatically turn red if the environment conditions are prone to mold and green otherwise.
 
 ## How to set everything up ##
 
@@ -74,7 +75,7 @@ We iterate through these arrays with **currentIndex** - set back to zero after r
 
 
 ## Access point and webserver ##
-It can at times be difficult to make an accessible user-interface on a microcontroller. However the versatility of the Arduino M5 Stack allows to efficiently address the issue. He is indeed capable of hosting a WiFi access point and also a webserver. In other terms, it means that the M5 Stack can answer to requests, in this case HTTP GET requests, sent on the local area network. Not only does it result in not needing to have an external webserver, it also makes it easier and more secure for the user to access the interface as they only have to load the web page after connecting to the WiFi. When starting the device, a new WiFi network called BathroomClimateController will appear. This network can be momentarily joined with password: ”123456789”. Upon connected to the WiFi network, the webpage findable at 192.168.4.1 will display all the relevant information. The device’s LED will automatically turn red if the environment conditions are prone to mold and green otherwise.
+It can at times be difficult to make an accessible user-interface on a microcontroller. However the versatility of the Arduino M5 Stack allows to efficiently address the issue. He is indeed capable of hosting a WiFi access point and also a webserver. In other terms, it means that the M5 Stack can answer to requests, in this case HTTP GET requests, sent on the local area network. Not only does it result in not needing to have an external webserver, it also makes it easier and more secure for the user to access the interface as they only have to load the web page after connecting to the WiFi. When starting the device, a new WiFi network called BathroomClimateController will appear. This network can be momentarily joined with password: ”123456789”. Upon connected to the WiFi network, the webpage findable at 192.168.4.1 will display all the relevant information.
 
 
 ## Generating HTML and Plotting ##
