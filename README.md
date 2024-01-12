@@ -12,7 +12,7 @@ Also the device’s LED will automatically turn red if the environment condition
 
 
 :-------------------------:|:-------------------------:
-![Atom lite](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/atomlite.png)  |  ![]([https://...Ocean.png](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/env3.png)
+![Atom lite](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/atomlite.png)  |  ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/env3.png)
 
 
 
