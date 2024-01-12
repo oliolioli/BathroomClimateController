@@ -12,7 +12,7 @@ Also the device’s LED will automatically turn red if the environment condition
 
 Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
-![Atom lite]([https://...Dark.png](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/atomlite.png))  |  ![](https://...Ocean.png)
+![Atom lite](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/atomlite.png)  |  ![](https://...Ocean.png)
 
 
 
