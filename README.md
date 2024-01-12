@@ -24,13 +24,11 @@ Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the
 
 # Access point and webserver ##
 
-| | |
-| -- | -- |
-| It can at times be difficult to make an accessible user-interface on a microcontroller. However the versatility of the Arduino M5 Stack allows to efficiently address the issue. He is indeed capable of hosting a WiFi access point and also a webserver (copied from https://github.com/m5stack/M5AtomU/blob/master/examples/Advanced/WIFI/WiFiSetting/WebServer.h), including <WiFi.h>, <WiFiClient.h> and <WiFiAP.h>. Thus the M5 Stack can answer HTTP GET requests, sent on the local area network. Not only does it result in not needing to have an external webserver, it also makes it easier and more secure for the user to access the interface as they only have to load the web page after connecting to the WiFi. When starting the device, a new **WiFi network called BathroomClimateController** will appear. This network can be momentarily joined with **password: ”123456789”**. Upon connected to the WiFi network, the webpage findable at **192.168.4.1** will display all the relevant information. | [![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/titleImage.png) |
-
 It can at times be difficult to make an accessible user-interface on a microcontroller. However the versatility of the Arduino M5 Stack allows to efficiently address the issue. He is indeed capable of hosting a WiFi access point and also a webserver (copied from https://github.com/m5stack/M5AtomU/blob/master/examples/Advanced/WIFI/WiFiSetting/WebServer.h), including <WiFi.h>, <WiFiClient.h> and <WiFiAP.h>.
 
 Thus the M5 Stack can answer HTTP GET requests, sent on the local area network. Not only does it result in not needing to have an external webserver, it also makes it easier and more secure for the user to access the interface as they only have to load the web page after connecting to the WiFi. When starting the device, a new **WiFi network called BathroomClimateController** will appear. This network can be momentarily joined with **password: ”123456789”**. Upon connected to the WiFi network, the webpage findable at **192.168.4.1** will display all the relevant information.
+
+[![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/titleImage.png)
 
 ## Generating HTML and Plotting ##
 JavaScript libraries nowadays eases plotting. But due to their complexity and interconnectedness it is utterly impossible to use them on an offline IOT sensor. Hence we plotted temperature, humidity and corresponding dew point on a grid with [HTML5 Canvas element](https://en.wikipedia.org/wiki/Canvas_element). Humidity and temperature needed two different y-axes and appropriate scaling. As sensor data is saved every minute we could average seven days back in time and could use JavaScript date functions of the local client to print a meaningful timeline on to the x-axis without need of any internal clock on the M5 ATOM. The plotting itself is done by iterating through the preprocessed data, drawing the plot pixel per pixel with the Canvas functions *moveTo()*, *lineTo()* and finally *stroke()*.
