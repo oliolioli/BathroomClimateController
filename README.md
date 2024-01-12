@@ -25,7 +25,6 @@ Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the
 # Access point and webserver ##
 
 | | |
-| -- | -- |
 | | |
 
 It can at times be difficult to make an accessible user-interface on a microcontroller. However the versatility of the Arduino M5 Stack allows to efficiently address the issue. He is indeed capable of hosting a WiFi access point and also a webserver (copied from https://github.com/m5stack/M5AtomU/blob/master/examples/Advanced/WIFI/WiFiSetting/WebServer.h), including <WiFi.h>, <WiFiClient.h> and <WiFiAP.h>.
