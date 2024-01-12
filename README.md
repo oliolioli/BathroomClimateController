@@ -16,6 +16,7 @@ $$ T_{dp} = T - \frac{100 - RH}{5} $$
 where Tdp is the dew point, T is the temperature, and RH is the relative humidity. A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.
 Our approach consisted of four phases.
 
+
 ## How to set everything up ##
 
 1. Set 
@@ -29,6 +30,10 @@ In your Arduino **"File" → "Preferences" → "Additional Boards Manager URLs"*
 3. Connect Sensor to your computer and choose Board by "Tools" → "Board" → "M5Stack" → "M5Stack-ATOM"
 
 4. In Arduino click CTRL+Shift+M to display the Serial Monitor. There you have to set Bauds = 600 to see the output of the program.
+
+
+**Technical Problems**
+- https://support.arduino.cc/hc/en-us/articles/360016495679-Fix-port-access-on-Linux
 
 
 ## Sensors ##
@@ -139,9 +144,3 @@ sed -e 's/^/client.println("/' index-escaped.html > index-escaped-prefix.html
 sed -e 's/$/");/' index-escaped-prefix.html > index-escaped-prefix-postfix.html
 
 ```
-
-
-
-
-**Technical Problems**
-- https://support.arduino.cc/hc/en-us/articles/360016495679-Fix-port-access-on-Linux
