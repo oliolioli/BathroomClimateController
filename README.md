@@ -3,7 +3,8 @@
 ## Track humidity & temperature in your bathroom to avoid mold and save energy 🛁 ##
 
 Mold growth in bathrooms is a pervasive problem that is not only unsightly but also poses significant health risks. As mold thrives in humid environments, bathrooms are particularly
-susceptible. BathroomClimateController is a small microprocessor capable of consistently monitoring conditions conducive to mold growth and plot all the data on to your smartphone.
+susceptible. BathroomClimateController is a small microprocessor capable of consistently monitoring conditions conducive to mold growth and plot all the data on to your smartphone. 
+Also the device’s LED will automatically turn red if the environment conditions are prone to mold and green otherwise.
 
 The [**M5 ATOM lite with an ENV III unit**](https://shop.m5stack.com/collections/m5-sensor/products/env-iii-unit-with-temperature-humidity-air-pressure-sensor-sht30-qmp6988) is used for this project, a comprehensive environmental sensor possessing the ability to accurately measure both temperature and humidity - two
 key elements in assessing mold risk. The fundamental concept behind mold detection system lies in the calculation of the dew point. This can be done with the Magnus-Tetens formula, an approximation technique
@@ -11,11 +12,11 @@ that incorporates both temperature and relative humidity:
 
 $$ T_{dewpoint} = T - \frac{100 - RH}{5} $$
 
-Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the *relative humidity*. **A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.**
+Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the *relative humidity*.
 
 ![Plotting temperature and humidity with HTML5 Canvas element](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/plot.png)
 
-The device’s LED will automatically turn red if the environment conditions are prone to mold and green otherwise.
+**A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.**
 
 ## How to set everything up ##
 
