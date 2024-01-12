@@ -7,38 +7,33 @@
 Mold growth in bathrooms is a pervasive problem that is not only unsightly but also poses significant health risks. As mold thrives in humid environments, bathrooms are particularly
 susceptible. BathroomClimateController is a small microprocessor capable of consistently monitoring conditions conducive to mold growth and plot all the data on to your smartphone.
 
-The M5 ATOM lite with an ENV III unit is used for this project, a comprehensive environmental sensor possessing the ability to accurately measure both temperature and humidity - two
-key elements in assessing mold risk. The fundamental concept behind our mold detection system lies in the calculation of the dew point. To calculate it, we adopted the Magnus-Tetens formula, an approximation technique
-that incorporates both temperature and relative humidity. This formula can be represented as:
+The *M5 ATOM lite with an ENV III unit* is used for this project, a comprehensive environmental sensor possessing the ability to accurately measure both temperature and humidity - two
+key elements in assessing mold risk. The fundamental concept behind mold detection system lies in the calculation of the dew point. This can be done with the Magnus-Tetens formula, an approximation technique
+that incorporates both temperature and relative humidity:
 
 $$ T_{dp} = T - \frac{100 - RH}{5} $$
 
-where Tdp is the dew point, T is the temperature, and RH is the relative humidity. A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.
-Our approach consisted of four phases.
-
-
-## How to set everything up ##
-
-1. Set 
-
-> https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
-
-In your Arduino **"File" → "Preferences" → "Additional Boards Manager URLs"**
-
-2. Get all the files from git with _git pull_
-
-3. Connect Sensor to your computer and choose Board by "Tools" → "Board" → "M5Stack" → "M5Stack-ATOM"
-
-4. In Arduino click CTRL+Shift+M to display the Serial Monitor. There you have to set Bauds = 600 to see the output of the program.
-
-
-**Technical Problems**
-- https://support.arduino.cc/hc/en-us/articles/360016495679-Fix-port-access-on-Linux
+Where $$T_{dp}$$ is the dew point, *T* is the *temperature*, and *RH* is the *relative humidity*. A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.
 
 
 ## Sensors ##
 
 Sensor **ENV III** https://shop.m5stack.com/collections/m5-sensor/products/env-iii-unit-with-temperature-humidity-air-pressure-sensor-sht30-qmp6988 fullfills the requirements and is quite cheap.
+
+
+## How to set everything up ##
+
+1. In your Arduino-Application set _https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json_ under **"File" → "Preferences" → "Additional Boards Manager URLs"**
+
+2. Get all the files from this repo through git with _git pull_
+
+3. Connect Sensor to your computer and choose Board by "Tools" → "Board" → "M5Stack" → "M5Stack-ATOM"
+
+4. In Arduino click CTRL+Shift+M to display the Serial Monitor. There you have to set *Bauds = 600* to see the output of the program.
+
+
+**Technical Problems accessing serial port under Linux**
+If you get problems accessing your serial port under Linux maybe this can help: https://support.arduino.cc/hc/en-us/articles/360016495679-Fix-port-access-on-Linux
 
 
 ## Data handling and storage ##
