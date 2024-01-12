@@ -7,7 +7,7 @@ Mold growth in bathrooms is a pervasive problem that is not only unsightly but a
 The [**M5 ATOM lite with an ENV III unit**](https://shop.m5stack.com/collections/m5-sensor/products/env-iii-unit-with-temperature-humidity-air-pressure-sensor-sht30-qmp6988) is used for this project, a comprehensive environmental sensor possessing the ability to accurately measure both temperature and humidity - two key elements in assessing mold risk.
 
 
-| M5 ATOM lite (7.5$) | + ENV III unit (6$) |     |
+| M5 ATOM lite (7.5$) | + ENV III unit (6$) | = total control of your bathroom |
 | ------------- | -------------- | -------------- |
 | ![Atom lite](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/atomlite.png) | ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/env3.png) | ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/titleImage.png) |
 
