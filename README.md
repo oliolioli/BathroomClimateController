@@ -33,10 +33,8 @@ The device’s LED will automatically turn red if the environment conditions are
 ### Space considerations for stack implementations ###
 Arduino says after compilation:
 
-```
-Sketch uses 751733 bytes (57%) of program storage space. Maximum is 1310720 bytes.
+>Sketch uses 751733 bytes (57%) of program storage space. Maximum is 1310720 bytes.
 Global variables use 44448 bytes (13%) of dynamic memory, leaving 283232 bytes for local variables. Maximum is 327680 bytes.
-```
 
 We can get exactly **110580 Bytes** on the whole M5 by malloc. Therefore these 110580 Bytes have to be split up into two arrays. As **size of float = 4 Bytes** and **size of unsigned short = 2 Bytes** one array to store data of 2 and the other to store data of 4 Bytes:
 
