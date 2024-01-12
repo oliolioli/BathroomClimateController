@@ -18,17 +18,13 @@ Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the
 
 ## How to set everything up ##
 
-1. In your Arduino-Application set _https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json_ under **"File" → "Preferences" → "Additional Boards Manager URLs"**
-
+1. Arduino: Set the following additional board manager _https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json_ under: **"File" → "Preferences" → "Additional Boards Manager URLs"** 
 2. Get all the files from this repo through git with _git pull_
+3. Connect the ENV III Sensor to your M5 Atom lite and connect the whole set up to your computer.
+4. Arduino: Choose Board by "Tools" → "Board" → "M5Stack" → "M5Stack-ATOM"
+5. Arduino: Click CTRL+Shift+M to display the Serial Monitor. There you have to set *Bauds = 600* to see the output of the program.
 
-3. Connect Sensor to your computer and choose Board by "Tools" → "Board" → "M5Stack" → "M5Stack-ATOM"
-
-4. In Arduino click CTRL+Shift+M to display the Serial Monitor. There you have to set *Bauds = 600* to see the output of the program.
-
-
-**Technical Problems accessing serial port under Linux**
-If you get problems accessing your serial port under Linux maybe this can help: https://support.arduino.cc/hc/en-us/articles/360016495679-Fix-port-access-on-Linux
+>> If you get problems accessing your serial port under Linux maybe this can help: https://support.arduino.cc/hc/en-us/articles/360016495679-Fix-port-access-on-Linux
 
 
 ## Data handling and storage ##
