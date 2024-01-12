@@ -14,7 +14,11 @@ $$ T_{dewpoint} = T - \frac{100 - RH}{5} $$
 
 Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the *relative humidity*.
 
-![Plotting temperature and humidity with HTML5 Canvas element](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/plot.png)
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![Plotting temperature and humidity with HTML5 Canvas element](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/plot.png)  |  ![](https://...Ocean.png)
+
+
 
 ➡ **A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.**
 
