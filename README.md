@@ -12,6 +12,7 @@ The [**M5 ATOM lite with an ENV III unit**](https://shop.m5stack.com/collections
 | ![Atom lite](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/atomlite.png) | ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/env3.png) | ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/titleImage.png) |
 
 
+## Temperature and relative humidity ##
 The fundamental concept behind mold detection system lies in the calculation of the dew point. This can be done with the Magnus-Tetens formula, an approximation technique
 that incorporates both temperature and relative humidity:
 
