@@ -5,7 +5,7 @@
 #include <WiFiAP.h>
 #include <string.h>
 
-// Taken from https://github.com/m5stack/M5AtomU/blob/master/examples/Advanced/WIFI/WiFiSetting/WebServer.h
+// The webserver part is taken from https://github.com/m5stack/M5AtomU/blob/master/examples/Advanced/WIFI/WiFiSetting/WebServer.h
 
 // Set these to your desired credentials.
 const char *ssid     = "BathroomClimateController";
