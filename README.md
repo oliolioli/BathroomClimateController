@@ -16,6 +16,8 @@ Where *T_dewpoint* is the *dew point*, *T* is the *temperature*, and *RH* is the
 ➡ **A higher dew point indicates greater moisture in the air, implying a higher risk of mold development.**
 
 
+
+
 | M5 ATOM lite (7.5$) | + ENV III unit (6$) | = total control of your bathroom |
 | ------------- | -------------- | -------------- |
 | ![Atom lite](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/atomlite.png) | ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/env3.png) | ![](https://github.com/oliolioli/BathroomClimateController/blob/main/screenshots/titleImage.png) |
